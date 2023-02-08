@@ -23,8 +23,8 @@ hs.hotkey.bind({}, 'f17', function()
     hs.application.launchOrFocus('Papago')
 end)
 
--- change to English when entering esc
-local inputEnglish = "com.apple.keylayout.ABC"
+-- change to English when typing esc
+local inputEnglish = "com.apple.keylayout.UnicodeHexInput"
 local esc_bind
 
 function back_to_eng()
@@ -36,7 +36,9 @@ function back_to_eng()
     esc_bind:disable()
 	hs.eventtap.keyStroke({}, 'escape')
     esc_bind:enable()
-	
+
 end 
 
 esc_bind = hs.hotkey.new({}, 'escape', back_to_eng):enable()
+hs.hotkey.new({}, 'eisu', back_to_eng):enable()
+hs.hotkey.new({}, 'kana', back_to_eng):enable()
